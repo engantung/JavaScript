@@ -1,0 +1,69 @@
+function player()
+{	
+	//initialize the hero condition
+	//the hero stands on the floor, o = 1
+	//the hero jumps or get rid off from the floor, o = 0
+	var o = 0;  //the hero is not standing on the floor
+  	return o;
+}
+
+function Boss_Attack_one()
+{
+	var random1 = Math.random();
+	var random2 = Math.random();
+	alert('BOSS throwing spike balls with amount of ');
+	console.log(random1);
+	alert('with pace of  ');
+	console.log(random2);
+}
+
+function Boss_Attack_two()
+{
+	var random = Math.random(); // get a random number from 0 to 1
+	if (random < 0.5) 
+	{ 
+		// 50% chance to get below 0.5
+		alert('TRAP rows UP 1-3-5-7');
+	}
+	else 
+	{
+		alert('TRAP rows UP 2-4-6');
+	}
+}
+
+function Boss_Attack_three()
+{
+	alert('BOSS kicking floor');
+}
+
+function activateBOSS_Random_Attack () {
+    var random = Math.random(); // get a random number from 0 to 1
+    var m = 0.6; // 60% chance to get below 0.6
+    var n = 0.9; // 30% chance to go between 0.6 and 0.9 
+    // 10% chance remaining
+
+    if (random < m) { 
+        Boss_Attack_one();
+        console.log(random);
+    } else if (random < n) { 
+        Boss_Attack_two();
+        console.log(random);
+    } else  { 
+        Boss_Attack_three();
+        console.log(random);
+        if(player() == 1)
+        {
+        	alert('stunned'); //the hero will be stunned when standing on the floor
+        }
+        else
+        {
+        	alert('avoid and normal'); //the hero shall be normal if not standing on the floor 
+        }
+    }
+}
+
+console.log(activateBOSS_Random_Attack ());
+
+
+
+
